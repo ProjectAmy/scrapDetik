@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Rate</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for data in datas %}
+      <tr>
+        <td>{{ data['code'] }}</td>
+        <td>{{ data['name'] }}</td>
+        <td>{{ data['rate'] }}</td>
+        <td>{{ data['date'] }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
