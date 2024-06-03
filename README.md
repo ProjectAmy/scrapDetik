@@ -1,0 +1,2 @@
+# scrapDetik
+latihan scraping detik
