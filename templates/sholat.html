@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Tanggal</th>
+        <th>Imsak</th>
+        <th>Subuh</th>
+        <th>Terbit</th>
+        <th>Dhuha</th>
+        <th>Dhuhur</th>
+        <th>Asar</th>
+        <th>Magrib</th>
+        <th>Isya</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for data in datas %}
+        <td>{{ data.get_text() }}</td>
+        {% endfor %}
+      </tr>
+
+    </tbody>
+  </table>
+{% endblock %}

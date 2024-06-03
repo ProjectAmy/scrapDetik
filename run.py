@@ -26,5 +26,14 @@ def idr_rates():
 
     return render_template('idr-rates.html', datas=json_data.values())
 
+@app.route('/sholat')
+def jadwal_sholat():
+    jadwal = requests.get('https://jadwalsholat.org/adzan/monthly.php?id=232')
+    soup = BeautifulSoup(jadwal.text, 'html.parser')
+    data = soup.find_all('tr', 'table_highlight')
+    data = data[0]
+
+    return render_template('sholat.html', datas=data)
+
 if __name__ == '__main__':
     app.run(debug=True)
